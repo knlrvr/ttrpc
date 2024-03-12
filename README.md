@@ -1,0 +1,2 @@
+Update 01/31/24 &mdash;
+I don't know if it's imposter syndrome or what, but diving deep into this project for the Convex Hackathon, and not being able to do certain things that I *feel* like I should be able to do kind of broke me down. I start my 'last year' of school soon, so I think I'm going to take a break from web dev, and focus my energy on tasks that are more impactful for my education and will better prepare me for or assist me in getting a job once I've graduated (or before!! internships, babyyyy).
