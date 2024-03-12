@@ -36,7 +36,11 @@
 > When a character is updated from the campaign screen, the action *is* performed, but the results of the action do not render unless you navigate away from the page, or reload. This bug *will* be removed before the next version. 
 
 ![v2.0.3](https://img.shields.io/badge/version-2.0.2-f87171) ![date](https://img.shields.io/badge/Oct_24_2023-informational) ![description](https://img.shields.io/badge/Styling_Updates_&_Function_Updates-grey)
-> Minor styling adjustments, mostly related to the `profile` page and the `quests` component on the `campaigns` page. `V2.0.2 Bug` has successfully been removed. When saving updated character stats within a campaign, changes are immediately reflected. Characters now feature an `in-game days` stat, contributing to the `in-game days` tracking within campaigns that can be found at the top of each campaign. 
+> Minor styling adjustments, mostly related to the `profile` page and the `quests` component on the `campaigns` page. `V2.0.2 Bug` has successfully been removed. When saving updated character stats within a campaign, changes are immediately reflected. Characters now feature an `in-game days` stat, contributing to the `in-game days` tracking within campaigns that can be found at the top of each campaign.
+
+![v3.0.0](https://img.shields.io/badge/version-3.0.0-f472b6) ![date](https://img.shields.io/badge/Mar_12_2024-informational) ![description](https://img.shields.io/badge/Auth_Overhaul_&_Styling-grey)
+> **Complete project rebuild**. Migrated to Next.js App router & moved authentication to Clerk. `Quests` temporarily unavailable. New functionality on character & campaign creation & editing. 
+
 
 <a name="description"></a>
 ## Description
