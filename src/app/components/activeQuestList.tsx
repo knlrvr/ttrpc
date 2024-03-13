@@ -20,19 +20,23 @@ export default function ActiveQuestList({
 
     const [selectedQuest, setSelectedQuest] = useState<string | null>(null);
 
+    // Check if there are any active quests
+    const activeQuests = quests?.filter(quest => !quest.completed);
+
     return (
         <>
             <span className="text-neutral-500 text-xs">Active Quests &mdash;</span>
-            <div className="">
-                {quests?.map((quest) => (   
-                    <div key={quest._id} className="grid grid-cols-2 lg:grid-cols-3 gap-4 pt-2 pb-8">
-                        {quest.completed === false ? ( 
-                            <div className="bg-[#222] rounded-lg flex flex-col justify-between p-4 shadow-md min-h-72">
+            <div className="pb-8 pt-2">
+                {/* Check if there are any active quests */}
+                {activeQuests && activeQuests.length > 0 ? (
+                    activeQuests.map(quest => (   
+                        <div key={quest._id} className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div className="bg-[#222] bg-opacity-80 rounded-lg flex flex-col justify-between p-4 shadow-md min-h-72">
                                 <div className="flex flex-col"> 
-                                    <span className="-mb-1">{quest.title}</span>
+                                    <span className="">{quest.title}</span>
                                     <span className="text-neutral-500 text-xs">{quest.type}</span>
                                 </div>
-                                <p className="flex grow my-2 text-sm">{quest.body}</p>
+                                <p className="flex grow mt-4 text-sm">{quest.body}</p>
                                 <div className="flex flex-col text-sm">
                                     {quest.gpReward !== 0 && (
                                         <div className="flex justify-between items-center">
@@ -61,11 +65,11 @@ export default function ActiveQuestList({
                                     <DeleteQuest questId={quest._id} setSelectedQuest={setSelectedQuest}/>
                                 </div>
                             </div>
-                        ) : (
-                            <p className="italic text-neutral-500 text-sm">No active quests at this time!</p>
-                        )}
-                    </div>
-                ))}
+                        </div>
+                    ))
+                ) : (
+                    <p>No active quests at this time!</p>
+                )}
             </div>
         </>
     )
