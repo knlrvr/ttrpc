@@ -3,6 +3,7 @@ import {
     DialogClose,
     DialogContent,
     DialogDescription,
+    DialogFooter,
     DialogHeader,
     DialogTitle,
     DialogTrigger,
@@ -14,6 +15,8 @@ import { useMutation, useQuery } from 'convex/react';
 import { api } from '../../../convex/_generated/api';
 import { Id } from '../../../convex/_generated/dataModel';
 import { useClerk, useSession } from '@clerk/clerk-react';
+
+import { Button } from './ui/button';
 
 export default function DeleteCamp({
     params
@@ -37,28 +40,27 @@ export default function DeleteCamp({
         {isOwner && (
         <Dialog>
             <DialogTrigger>
-               <p className="text-red-500 border border-red-500 rounded-full px-6 py-1 text-sm hover:bg-red-500 hover:text-[#111] duration-200">Delete Campaign</p>
+               <span className="text-sm text-red-500">Delete Campaign</span>
             </DialogTrigger>
-            <DialogContent>
+            <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
                     <DialogTitle>Are you absolutely sure?</DialogTitle>
                     <DialogDescription>
                         This action cannot be undone. Clicking delete will permanently delete this campaign and all of its data.
                     </DialogDescription>
-                    <div className="flex justify-evenly pt-6">
+                    <DialogFooter>
                         <DialogClose>
-                            <p className="border py-1 px-6 rounded-full border-[#111] hover:bg-[#111] hover:text-neutral-100 dark:border-neutral-100 dark:hover:bg-neutral-100 dark:hover:text-[#111] duration-200">Close</p>
+                            <p className="text-sm">Close</p>
                         </DialogClose>
-                        <button 
-                            className="border border-red-500 text-red-500 py-1 px-6 rounded-full hover:bg-red-500 hover:text-red-950 duration-200"
+                        <Button type='submit' variant='destructive'
                             onClick={() => {
                                 deleteCamp({
                                 id: currentCampaign as Id<"campaigns">,
-                                })
-                                router.push('/dashboard/campaigns')
-                            }}
-                        >Delete</button>
-                        </div>
+                            })
+                            router.push('/dashboard/campaigns')
+                        }}
+                        >Delete Campaign</Button>
+                    </DialogFooter>
                 </DialogHeader>
             </DialogContent>
         </Dialog>   

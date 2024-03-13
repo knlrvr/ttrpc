@@ -156,6 +156,21 @@ export const getQuests = query({
     }
 });
 
+export const completeQuest = mutation({
+    args: {
+        id: v.id('quests'),
+        completed: v.boolean()
+    },
+    handler: async (ctx, args) => {
+        const { id } = args;
+        const newStatus = await ctx.db
+            .patch(id, {
+                completed: args.completed,
+            })
+        return newStatus;
+    }
+});
+
 export const deleteQuest = mutation({
     args: { id: v.id('quests') },
     handler: async (ctx, args) => {

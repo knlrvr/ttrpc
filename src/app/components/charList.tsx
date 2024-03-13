@@ -4,6 +4,8 @@ import { useMutation, useQuery } from 'convex/react';
 import { api } from "../../../convex/_generated/api";
 import { Id } from "../../../convex/_generated/dataModel";
 
+import { Button } from './ui/button';
+
 import {
     Sheet,
     SheetContent,
@@ -23,6 +25,7 @@ import {
     DialogClose,
     DialogContent,
     DialogDescription,
+    DialogFooter,
     DialogHeader,
     DialogTitle,
     DialogTrigger,
@@ -361,21 +364,20 @@ export default function CharList({
                                             <DialogDescription>
                                                 This character will no longer be active in this campaign but can still be viewed in your character list.
                                             </DialogDescription>
-                                            <div className="flex justify-evenly pt-6">
-                                            <DialogClose>
-                                                <p className="border py-1 px-6 rounded-full border-[#111] hover:bg-[#111] hover:text-neutral-100 dark:border-neutral-100 dark:hover:bg-neutral-100 dark:hover:text-[#111] duration-200">Close</p>
-                                            </DialogClose>
-                                            <button 
-                                                className="border border-blue-500 text-blue-500 py-1 px-6 rounded-full hover:bg-blue-500 hover:text-blue-950 duration-200"
-                                                onClick={() => {
-                                                    removeCharFromCamp({
-                                                        id: char._id,
-                                                        playerId: user?.id ?? '',
-                                                    })
-                                            }}>
-                                                Remove
-                                            </button>
-                                            </div>
+                                            <DialogFooter>
+                                                <DialogClose>
+                                                    <p className="text-sm">Close</p>
+                                                </DialogClose>
+                                                <Button type='submit' variant='outline'
+                                                    onClick={() => {
+                                                        removeCharFromCamp({
+                                                            id: char._id,
+                                                            playerId: user?.id ?? '',
+                                                        })
+                                                }}>
+                                                    Remove
+                                                </Button>
+                                            </DialogFooter>
                                             </DialogHeader>
                                         </DialogContent>
                                     </Dialog>      
@@ -387,22 +389,22 @@ export default function CharList({
                                             <DialogHeader>
                                             <DialogTitle>Are you absolutely sure?</DialogTitle>
                                             <DialogDescription>
-                                                This action cannot be undone. This will permanently delete {char.title}.
+                                                This action cannot be undone. This will permanently delete {char.title} and all of their data.
                                             </DialogDescription>
-                                            <div className="flex justify-evenly pt-6">
-                                            <DialogClose>
-                                                <p className="border py-1 px-6 rounded-full border-[#111] hover:bg-[#111] hover:text-neutral-100 dark:border-neutral-100 dark:hover:bg-neutral-100 dark:hover:text-[#111] duration-200">Close</p>
-                                            </DialogClose>
-                                            <button 
-                                                className="border border-red-500 text-red-500 py-1 px-6 rounded-full hover:bg-red-500 hover:text-red-950 duration-200"
-                                                onClick={() => {
-                                                    deleteChar({
-                                                        id: char._id
-                                                    })
-                                            }}>
-                                                Delete
-                                            </button>
-                                            </div>
+                                            <DialogFooter>
+                                                <DialogClose>
+                                                    <p className="text-sm">Close</p>
+                                                </DialogClose>
+                                                <Button type='submit' variant='destructive'
+                                                    onClick={() => {
+                                                        deleteChar({
+                                                            id: char._id
+                                                        })
+                                                    }}
+                                                >
+                                                    Delete Character
+                                                </Button>
+                                            </DialogFooter>
                                             </DialogHeader>
                                         </DialogContent>
                                     </Dialog>                                 
