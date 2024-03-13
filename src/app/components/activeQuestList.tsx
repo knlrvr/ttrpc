@@ -68,7 +68,7 @@ export default function ActiveQuestList({
                         </div>
                     ))
                 ) : (
-                    <p className="italic text-neutral-500 text-sm">No active quests at this time!</p>
+                    <p className="italic text-neutral-500 text-sm">No active quests to display!</p>
                 )}
             </div>
         </>
