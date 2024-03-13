@@ -32,7 +32,7 @@ export default function Dashboard() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <Link href="/dashboard/campaigns"
-            className="md:col-span-2 flex justify-between items-center rounded-lg p-4 py-8 bg-neutral-100 dark:bg-[#222] dark:bg-opacity-50 shadow-md">
+            className="md:col-span-2 flex justify-between items-center rounded-lg p-4 py-8 bg-neutral-100 dark:bg-[#222] shadow-md">
             <div className="flex flex-col font-light">
               <p className="text-2xl">Campaigns</p>
               <p className="text-neutral-500 text-sm tracking-wide w-3/4">View your active campaigns and create or join new campaigns.</p>
@@ -41,7 +41,7 @@ export default function Dashboard() {
           </Link>
 
           <Link href="/dashboard/characters"
-            className="md:col-span-2 flex justify-between items-center rounded-lg p-4 py-8 bg-neutral-100 dark:bg-[#222] dark:bg-opacity-50 shadow-md">
+            className="md:col-span-2 flex justify-between items-center rounded-lg p-4 py-8 bg-neutral-100 dark:bg-[#222] shadow-md">
             <div className="flex flex-col font-light">
               <p className="text-2xl">Characters</p>
               <p className="text-neutral-500 text-sm tracking-wide w-3/4">View your active & inactive characters or create a new character.</p>
