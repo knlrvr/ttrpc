@@ -29,7 +29,7 @@ export default function CampaignsPage() {
               {isMember && (
                 <Link href={`/dashboard/campaigns/${camp._id}`}
                   key={camp._id} 
-                  className="my-2 py-8 flex flex-col tracking-wide first:mt-0 mt-4 p-4 border border-neutral-300 dark:border-neutral-700 rounded-lg bg-neutral-50 dark:bg-[#222] dark:bg-opacity-20"> 
+                  className="my-2 py-8 flex flex-col tracking-wide first:mt-0 mt-4 p-4 rounded-lg bg-neutral-50 dark:bg-[#222] dark:bg-opacity-50 shadow-md"> 
                     <span className="text-xl">{camp.title}</span>
                 </Link>
               )}
