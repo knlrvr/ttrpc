@@ -34,8 +34,8 @@ export default function NewCampaign() {
             <Dialog>
                 <DialogTrigger>
                     <div className="flex items-center group space-x-2 px-4 py-1 rounded-full border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-blue-950">
-                        <BsPlusLg />
                         <p className="text-sm font-light">New Campaign</p>
+                        <BsPlusLg />
                     </div>
                 </DialogTrigger>
                 <DialogContent>

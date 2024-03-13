@@ -116,6 +116,53 @@ export const getOwner = query({
     },
 });
 
+export const createQuest = mutation({
+    args: {
+        campaignId: v.string(),
+        title: v.string(),
+        type: v.string(),
+        body: v.string(),
+        assigned: v.string(),
+        gpReward: v.optional(v.number()),
+        invReward: v.optional(v.string()),
+
+        completed: v.boolean(),
+    },
+    handler: async (ctx, args) => {
+        const questId = await ctx.db.insert("quests", {
+            campaignId: args.campaignId,
+            title: args.title ?? '',
+            type: args.type ?? '',
+            body: args.body ?? '',
+            assigned: args.assigned ?? '',
+            gpReward: args.gpReward ?? 0,
+            invReward: args.invReward ?? '',
+            completed: args.completed ?? false,
+        });
+    },
+});
+
+export const getQuests = query({
+    args: {
+        id: v.id('campaigns')
+    },
+    handler: async (ctx, args) => {
+        const quests = await ctx.db
+            .query('quests')
+            .filter((q) => q.eq(q.field('campaignId'), args.id))
+            .collect();
+
+        return quests;
+    }
+});
+
+export const deleteQuest = mutation({
+    args: { id: v.id('quests') },
+    handler: async (ctx, args) => {
+        await ctx.db.delete(args.id)
+    }
+})
+
 export const leaveCamp = mutation({
     args: {
         id: v.id('campaigns'),

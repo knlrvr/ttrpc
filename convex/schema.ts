@@ -51,4 +51,15 @@ export default defineSchema({
         time: v.float64(),
         title: v.string(),
     }),    
+
+    quests: defineTable({
+      campaignId: v.string(),
+      title: v.string(),
+      type: v.string(),
+      body: v.string(),
+      assigned: v.string(),
+      gpReward: v.number(),
+      invReward: v.string(),
+      completed: v.boolean(),
+    })
 });

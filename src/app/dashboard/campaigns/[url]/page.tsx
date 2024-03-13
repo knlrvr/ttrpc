@@ -15,6 +15,8 @@ import ShowCamp from "@/app/components/showCamp";
 import LeaveCamp from "@/app/components/leaveCamp";
 
 import MembersList from "@/app/components/membersList";
+import { CreateQuest } from "@/app/components/createQuest";
+import QuestList from "@/app/components/questList";
 
 export default function CampaignDetailsPage({
     params
@@ -42,6 +44,11 @@ export default function CampaignDetailsPage({
 
         {/* Party Totals */}
         <PartyTotals params={{ url: currentCampaign }} />
+
+        {/* Quest Creator & Active Quest List */}
+        <QuestList params={{ url: currentCampaign }} />
+        <CreateQuest params={{ url: currentCampaign }} />
+        
 
         {/* List of Characters */}
         <CharList params={{ url: currentCampaign }} />
