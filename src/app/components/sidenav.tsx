@@ -109,7 +109,7 @@ const Header = () => {
                     <div className="mt-4 flex justify-between items-end">
                         <div className="flex items-center space-x-1">
                             <div className="h-2 w-2 bg-green-500 rounded-full"></div>
-                            <p className="text-xs font-mono text-neutral-500">v.1.0.1</p>
+                            <p className="text-xs font-mono text-neutral-500">v.3.0.0</p>
                         </div>
                         <ToggleTheme />
                     </div>
