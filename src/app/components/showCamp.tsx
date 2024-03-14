@@ -33,7 +33,7 @@ export default function ShowCamp({
         if (!isHidden) {
             timeoutId = setTimeout(() => {
                 setIsHidden(true);
-            }, 10000); // 10 seconds in milliseconds
+            }, 5000); // 5 seconds in milliseconds
         }
 
         return () => {
