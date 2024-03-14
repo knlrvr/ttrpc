@@ -31,10 +31,10 @@ export default function LeaveCamp({
 
     const char = useQuery(api.character.getUserChars, { playerId: user?.id ?? ' '})
     const leaveCamp = useMutation(api.campaigns.leaveCamp)
+
     const removeChar = useMutation(api.character.removeCharFromCamp)
 
     const isOwner = useQuery(api.campaigns.getOwner, { id: currentCampaign as Id<'campaigns'> })
-
     const isMember = useQuery(api.campaigns.getMembersInCamp, { playerId: user?.id ?? ''})
     
     return (
@@ -58,21 +58,22 @@ export default function LeaveCamp({
                             <DialogClose>
                                 <p className="text-sm">Close</p>
                             </DialogClose>
-                            {char?.map((char) => (
-                                <Button key={char._id} variant='destructive'
+                            <Button type='submit' variant='destructive'
                                 onClick={() => {
                                     leaveCamp({
                                         id: currentCampaign as Id<"campaigns">,
                                         memberToRemove: user?.id ?? '',
                                     });
-                                    removeChar({
-                                        id: char._id,
-                                        playerId: user?.id ?? '',
-                                    });
+                                    {char?.map(character => {
+                                        removeChar({
+                                            id: character._id ?? '',
+                                            playerId: user?.id ?? '',
+                                        })
+                                    })}
                                     router.push('/dashboard/campaigns')
                                 }}
                                 >Leave</Button>
-                            ))}
+
                             </DialogFooter>
                     </DialogHeader>
                 </DialogContent>
