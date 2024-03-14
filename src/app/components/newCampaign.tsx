@@ -23,12 +23,32 @@ export default function NewCampaign() {
     const { user } = useClerk();
 
     const [title, setTitle] = useState<string>('');
-    const [campaignId, setCampaignId] = useState<string>('')
+    const [campaignId, setCampaignId] = useState<string>('');
+
+    const [error, setError] = useState<string>('');
 
 
     const createCamp = useMutation(api.campaigns.createCamp);
 
     const joinCamp = useMutation(api.campaigns.joinCamp);
+
+    const handleJoin = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+        e.preventDefault();
+        try {
+            await joinCamp({
+                id: campaignId as Id<"campaigns">,
+                newMembers: [{
+                    playerId: user?.id ?? '',
+                    playerImg: user?.imageUrl ?? '',
+                    playerName: user?.fullName ?? ''
+                }]
+            });
+            setError('');
+            setCampaignId('');
+        } catch (error) {
+            setError('Invalid Campaign ID. Please try again.');
+        }
+    };
 
     return (
         <div>
@@ -62,10 +82,10 @@ export default function NewCampaign() {
                                         playerImg: user?.imageUrl ?? '',
                                     }],
                                 });
-                            setTitle('');
+                                setTitle('');
                             }}
                             className="w-full flex flex-col justify-start"
-                            >
+                        >
                             <div className="flex flex-col justify-start space-y-2 text-neutral-500 text-xs mt-4">
                                 <label htmlFor='New Campaign'
                                     className="ml-5">
@@ -86,18 +106,7 @@ export default function NewCampaign() {
                             </div>
                         </form>
                         <form 
-                            onSubmit={e => {
-                                e.preventDefault();
-                                joinCamp({
-                                    id: campaignId as Id<"campaigns">,
-                                    newMembers: [{
-                                        playerId: user?.id ?? '',
-                                        playerImg: user?.imageUrl ?? '',
-                                        playerName: user?.fullName ?? ''
-                                    }],
-                                    })
-                                setCampaignId('');
-                            }}
+                            onSubmit={handleJoin}
                             className="w-full flex flex-col justify-start"
                             >
                             <div className="flex flex-col justify-start space-y-2 text-neutral-500 text-xs mt-4">
@@ -112,6 +121,7 @@ export default function NewCampaign() {
                                     required
                                     placeholder='Campaign ID'
                                 />
+                                {error && <span className="text-red-500">{error}</span>}
                             </div>
                             <div className="mt-4 ml-1">
                                 <Button type='submit' variant='successful'>
