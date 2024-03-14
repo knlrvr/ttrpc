@@ -19,6 +19,7 @@ import { CreateQuest } from "@/app/components/createQuest";
 
 import ActiveQuestList from "@/app/components/activeQuestList";
 import CompQuestList from "@/app/components/compQuestList";
+import { QuestLog } from "@/app/components/questLog";
 
 export default function CampaignDetailsPage({
     params
@@ -50,8 +51,11 @@ export default function CampaignDetailsPage({
         {/* Quest Creator & Active Quest List */}
         <div className="flex flex-col">
           <ActiveQuestList params={{ url: currentCampaign }} />
-          <CompQuestList params={{ url: currentCampaign }} />
-          <CreateQuest params={{ url: currentCampaign }} />
+          
+          <div className="flex justify-between items-center">
+            <CreateQuest params={{ url: currentCampaign }} />
+            <QuestLog params={{ url: currentCampaign }} />
+          </div>
         </div>
         
 
