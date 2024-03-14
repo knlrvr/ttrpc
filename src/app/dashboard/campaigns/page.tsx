@@ -1,4 +1,7 @@
 'use client'
+
+import Image from 'next/image';
+
 import React, { useState } from 'react'
 
 import { useMutation, useQuery } from 'convex/react';
@@ -29,8 +32,21 @@ export default function CampaignsPage() {
                   <Link
                     href={`/dashboard/campaigns/${camp._id}`}
                     key={camp._id} 
-                    className="w-full h-full"> 
-                      <span className="text-xl">{camp.title}</span>
+                    className="w-full h-full flex flex-col"> 
+                      <span className="text-xl mb-2">{camp.title}</span>
+                      <div className="flex -space-x-4">
+                        {camp.members.map(member => (
+                          <Image
+                            key={member.playerId}
+                            src={member.playerImg}
+                            alt={`${member.playerName}'s pfp`}
+                            width={1000}
+                            height={1000}
+                            className="rounded-full w-10 h-10 border-4 border-neutral-50 dark:border-[#1b1b1b]"
+                          />
+                        ))}
+                      </div>
+                      
                   </Link>
                 )}
               </Card>

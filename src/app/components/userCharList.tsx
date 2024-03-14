@@ -28,6 +28,7 @@ import {
     DialogClose,
     DialogContent,
     DialogDescription,
+    DialogFooter,
     DialogHeader,
     DialogTitle,
     DialogTrigger,
@@ -984,7 +985,7 @@ export default function UserCharList() {
                                             <DialogTrigger>
                                                 <BsPlusLg className="text-blue-500 text-xl border border-blue-500 rounded-full p-1" />
                                             </DialogTrigger>
-                                            <DialogContent>
+                                            <DialogContent  className="sm:max-w-[425px]">
                                                 <DialogHeader>
                                                     <DialogTitle>Select the campaign you&apos;d like to add {char.title} to.</DialogTitle>
                                                     <DialogDescription>
@@ -1019,26 +1020,25 @@ export default function UserCharList() {
                                             <DialogTrigger>
                                                 <BsTrash className="text-red-500 w-full text-lg" />
                                             </DialogTrigger>
-                                            <DialogContent>
+                                            <DialogContent  className="sm:max-w-[425px]">
                                                 <DialogHeader>
                                                 <DialogTitle>Are you absolutely sure?</DialogTitle>
                                                 <DialogDescription>
                                                     This action cannot be undone. This will permanently delete {char.title}.
                                                 </DialogDescription>
-                                                <div className="flex justify-evenly pt-6">
-                                                <DialogClose>
-                                                    <p className="border py-1 px-6 rounded-full border-[#111] hover:bg-[#111] hover:text-neutral-100 dark:border-neutral-100 dark:hover:bg-neutral-100 dark:hover:text-[#111] duration-200">Close</p>
-                                                </DialogClose>
-                                                <button 
-                                                    className="border border-red-500 text-red-500 py-1 px-6 rounded-full hover:bg-red-500 hover:text-red-950 duration-200"
-                                                    onClick={() => {
-                                                        deleteChar({
-                                                            id: char._id
-                                                        })
-                                                }}>
-                                                    Delete
-                                                </button>
-                                                </div>
+                                                <DialogFooter>
+                                                    <DialogClose>
+                                                        <p className="text-sm">Close</p>
+                                                    </DialogClose>
+                                                    <Button type='submit' variant='destructive'
+                                                        onClick={() => {
+                                                            deleteChar({
+                                                                id: char._id
+                                                            })
+                                                    }}>
+                                                        Delete
+                                                    </Button>
+                                                </DialogFooter>
                                                 </DialogHeader>
                                             </DialogContent>
                                         </Dialog>                    

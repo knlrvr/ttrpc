@@ -62,7 +62,7 @@ export const getCampCharacters = query({
         const chars = await ctx.db
             .query('characters')
             .filter((q) => q.eq(q.field("campaignId"), args.campaignId ))
-            .order('desc')
+            .order('asc')
             .collect();
         return chars;
     }

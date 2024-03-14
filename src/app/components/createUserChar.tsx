@@ -112,7 +112,7 @@ export default function CreateUserCharacter({}) {
         <div>
         <Accordion type="single" collapsible className="w-full mt-12">
           <AccordionItem value="item-1">
-            <AccordionTrigger>Add New Character</AccordionTrigger>
+            <AccordionTrigger>Create New Character</AccordionTrigger>
             <AccordionContent>
             <form 
               onSubmit={e => {

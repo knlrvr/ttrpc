@@ -210,15 +210,15 @@ export default function CharList({
         {char?.length !== undefined && char?.length > 0 && ( 
             <span className="text-xs text-neutral-500">Campaign Characters &mdash; </span>
         )}
-            {char?.map(char => {
+            {char?.map((char, index) => {
                 
                 return (
                     <Accordion type="single" collapsible className="w-full" key={char._id}>
-                        <AccordionItem value={`item-1`}>
+                        <AccordionItem value={`item-${index}`}>
                             <AccordionTrigger>
                                 <div className="font-light tracking-wide flex items-center space-x-2">
-                                    <div className="h-4 w-4 rounded-full bg-neutral-300 dark:bg-[#333] bg-opacity-80 dark:bg-opacity-80"></div>
-                                    <span>{char.title}</span>
+                                    <div className={`border-4 h-4 w-4 rounded-full ${getBorderColorClass(char.gameClass)}`}></div>
+                                    <span>{char.title}</span> 
                                 </div>
                             </AccordionTrigger>
                             <AccordionContent>
