@@ -6,6 +6,7 @@ import { Id } from "../../../convex/_generated/dataModel"
 import { DeleteQuest } from './deleteQuest';
 import { useState } from 'react';
 import { RxCheckCircled } from 'react-icons/rx';
+import { Card } from './ui/card';
 
 export default function ActiveQuestList({
     params
@@ -30,8 +31,8 @@ export default function ActiveQuestList({
                 {/* Check if there are any active quests */}
                 {activeQuests && activeQuests.length > 0 ? (
                     activeQuests.map(quest => (   
-                        <div key={quest._id} className="">
-                            <div className="bg-neutral-200 dark:bg-[#222] bg-opacity-80 rounded-lg flex flex-col justify-between p-4 dark:shadow-md min-h-72">
+                        <Card key={quest._id} className="p-4">
+                            <div className="">
                                 <div className="flex flex-col"> 
                                     <span className="">{quest.title}</span>
                                     <span className="text-neutral-500 text-xs">{quest.type}</span>
@@ -71,7 +72,7 @@ export default function ActiveQuestList({
                                     <DeleteQuest questId={quest._id} setSelectedQuest={setSelectedQuest}/>
                                 </div>
                             </div>
-                        </div>
+                        </Card>
                     ))
                 ) : (
                     <p className="italic text-neutral-500 text-sm">No active quests to display!</p>

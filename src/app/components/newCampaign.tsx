@@ -125,7 +125,7 @@ export default function NewCampaign() {
                             </div>
                             <div className="mt-4 ml-1">
                                 <Button type='submit' variant='successful'>
-                                        Join
+                                    Join
                                 </Button>
                             </div>
                         </form>

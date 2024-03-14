@@ -36,10 +36,14 @@ export default function MembersList({
                         />
                     </div>
                 )}
-
+            
+            {filteredChars !== undefined && filteredChars.length > 0 && (
             <span className="ml-1 text-xs text-neutral-500 mt-6">Members &mdash;</span>
+            )}
+
             <div className="flex -space-x-4 mt-1">
-                {filteredChars?.map((char) => (
+                {filteredChars !== undefined && filteredChars.length > 0 && (
+                    filteredChars?.map((char) => (
                         <div key={char.playerId} className="">
                             <Image
                                 src={char.playerImg}
@@ -49,7 +53,8 @@ export default function MembersList({
                                 className="h-12 w-12 rounded-full border-4 border-neutral-100 dark:border-border"
                             />
                         </div>
-                ))}
+                    ))
+                )}
             </div>
         </div>
         </>

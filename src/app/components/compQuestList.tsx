@@ -8,6 +8,7 @@ import { Id } from "../../../convex/_generated/dataModel"
 import { RxCheck, RxReload, RxUpdate } from 'react-icons/rx';
 import { Button } from './ui/button';
 import { DeleteQuest } from './deleteQuest';
+import { Card } from '@/app/components/ui/card';
 
 
 export default function CompQuestList({
@@ -28,12 +29,12 @@ export default function CompQuestList({
 
     return (
         <>
-            <div className="flex flex-col mt-4">
+            <div className="flex flex-col my-4">
                 {/* Check if there are any completed quests */}
                 {completedQuests && completedQuests.length > 0 ? (
                     completedQuests.map(quest => (
-                        <div key={quest._id} className="mb-4">
-                            <div className="bg-neutral-300 dark:bg-[#222] bg-opacity-80 rounded-lg flex flex-col justify-between p-4 dark:shadow-md shadow-md text-neutral-400 dark:text-neutral-500">
+                        <Card key={quest._id} className="mb-4">
+                            <div className="rounded-lg flex flex-col justify-between p-4 dark:shadow-md shadow-md text-neutral-400 dark:text-neutral-500">
                                 <div className="flex flex-col"> 
                                     <span className="text-[#111] dark:text-neutral-100">{quest.title}</span>
                                     <span className="text-xs">{quest.type}</span>
@@ -73,7 +74,7 @@ export default function CompQuestList({
                                     <DeleteQuest questId={quest._id} setSelectedQuest={setSelectedQuest}/>
                                 </div>
                             </div>
-                        </div>
+                        </Card>
                     ))
                 ) : (
                     <p className="italic text-neutral-500 text-sm">No completed quests to display!</p>

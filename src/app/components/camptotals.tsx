@@ -10,7 +10,7 @@ export default function CampTotals({
     params: { url: string }
 }) {
 
-    const currentCampaign = params.url;
+    const currentCampaign = params.url; 
     
     return (
         <div className="flex flex-col space-y-2 mb-8">

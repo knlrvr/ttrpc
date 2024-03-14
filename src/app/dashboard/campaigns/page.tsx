@@ -8,6 +8,7 @@ import { Id } from '../../../../convex/_generated/dataModel';
 import { useClerk } from '@clerk/clerk-react';
 import Link from 'next/link';
 import NewCampaign from '@/app/components/newCampaign';
+import { Card } from '@/app/components/ui/card';
 
 export default function CampaignsPage() {
   const { user } = useClerk();
@@ -17,22 +18,22 @@ export default function CampaignsPage() {
     <div className="flex flex-col space-y-8 mt-2">
       <NewCampaign />
       
-      <div className="pt-2 flex flex-col space-y-2">
+      <div className="flex flex-col space-y-2">
         <span className="text-xs text-neutral-500">Campaigns &mdash;</span>
         {camps && camps.length > 0 ? (
           camps.map(camp => {
             const isMember = camp.members.some(member => member.playerId === user?.id);
             return (
-              <div key={camp._id}>
+              <Card key={camp._id} className="py-6 px-4">
                 {isMember && (
                   <Link
                     href={`/dashboard/campaigns/${camp._id}`}
                     key={camp._id} 
-                    className="my-2 py-8 flex flex-col tracking-wide first:mt-0 mt-4 p-4 rounded-lg bg-neutral-50 dark:bg-[#222] shadow-md"> 
-                    <span className="text-xl">{camp.title}</span>
+                    className="w-full h-full"> 
+                      <span className="text-xl">{camp.title}</span>
                   </Link>
                 )}
-              </div>
+              </Card>
             );
           })
         ) : (

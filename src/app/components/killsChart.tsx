@@ -1,6 +1,7 @@
 import { useQuery } from 'convex/react';
 
-import { Card, DonutChart } from "@tremor/react";
+import { DonutChart } from "@tremor/react";
+import { Card } from './ui/card';
 import { api } from "../../../convex/_generated/api";
 import { Id } from '../../../convex/_generated/dataModel';
 
@@ -19,7 +20,7 @@ export default function KillsChart({
     }))
 
     return (
-        <Card className="w-full">
+        <Card className="w-full flex flex-col items-center justify-center min-h-56">
             {character !== undefined && ( 
             <DonutChart
                 className=""

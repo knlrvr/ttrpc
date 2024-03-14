@@ -1,6 +1,8 @@
 import { useQuery } from 'convex/react';
 
-import { Card, DonutChart } from "@tremor/react";
+import { DonutChart } from "@tremor/react";
+
+import { Card } from './ui/card';
 import { api } from "../../../convex/_generated/api";
 import { Id } from '../../../convex/_generated/dataModel';
 import { PiUsers } from 'react-icons/pi';
@@ -18,7 +20,7 @@ export default function PlayersChart({
     const totalChar = character?.length;
 
     return (
-        <div className="bg-neutral-200 dark:bg-[#222] rounded-lg p-2 pt-8 h-fit relative">
+        <Card className="relative p-4 flex flex-col justify-between">
             {character !== undefined ? ( 
                 <div className="text-5xl font-medium">
                     {totalChar}
@@ -31,6 +33,6 @@ export default function PlayersChart({
             <p className="text-sm flex justify-start mt-4 font-light">Total <br /> Players</p>
 
             <div className="absolute text-lg p-1 bg-blue-300 rounded-full text-[#111] -top-2 -left-2"><PiUsers /></div>
-        </div>
+        </Card>
     )
 }

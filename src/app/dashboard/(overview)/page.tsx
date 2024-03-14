@@ -1,5 +1,6 @@
 'use client'
 
+import { Card } from "@/app/components/ui/card";
 import { useClerk } from "@clerk/clerk-react";
 import Link from "next/link";
 
@@ -31,34 +32,28 @@ export default function Dashboard() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <Link href="/dashboard/campaigns"
-            className="md:col-span-2 flex justify-between items-center rounded-lg p-4 py-8 bg-neutral-100 dark:bg-[#222] shadow-md">
-            <div className="flex flex-col font-light">
-              <p className="text-2xl">Campaigns</p>
-              <p className="text-neutral-500 text-sm tracking-wide w-3/4">View your active campaigns and create or join new campaigns.</p>
-            </div>
-            <PiTent className="text-3xl" />
-          </Link>
+          
+          <Card className="md:col-span-2 p-4 py-8 flex justify-between items-center">
+            <Link href="/dashboard/campaigns" className="w-full h-full flex items-center justify-between">
+              <div className="flex flex-col font-light">
+                <p className="text-2xl mb-2">Campaigns</p>
+                <p className="text-neutral-500 text-sm tracking-wide w-3/4">View your active campaigns and create or join new campaigns.</p>
+              </div>
+              <PiTent className="text-3xl" />
+            </Link>
+          </Card>
 
-          <Link href="/dashboard/characters"
-            className="md:col-span-2 flex justify-between items-center rounded-lg p-4 py-8 bg-neutral-100 dark:bg-[#222] shadow-md">
-            <div className="flex flex-col font-light">
-              <p className="text-2xl">Characters</p>
-              <p className="text-neutral-500 text-sm tracking-wide w-3/4">View your active & inactive characters or create a new character.</p>
-            </div>
-            <PiUsers className="text-3xl" />
-          </Link>
+          <Card className="md:col-span-2 p-4 py-8 flex justify-between items-center">
+            <Link href="/dashboard/characters" className="w-full h-full flex items-center justify-between">
+              <div className="flex flex-col font-light">
+                <p className="text-2xl mb-2">Characters</p>
+                <p className="text-neutral-500 text-sm tracking-wide w-3/4">View your active & inactive characters or create a new character.</p>
+              </div>
+              <PiUsers className="text-3xl" />
+            </Link>
+          </Card>
 
-          {/* <Link href="/dashboard/profile"
-            className="md:col-span-2 flex justify-between items-center border border-neutral-300 dark:border-neutral-700 rounded-lg p-4 py-8 bg-neutral-100 dark:bg-[#222] dark:bg-opacity-20">
-            <div className="flex flex-col font-light">
-              <p className="text-2xl">Profile</p>
-              <p className="text-neutral-500 text-sm tracking-wide">View your profile.</p>
-            </div>
-            <PiGear className="text-3xl" />
-          </Link> */}
         </div>
-        
       </div>
     );
   }
