@@ -33,7 +33,7 @@ export function DeleteQuest({ questId, setSelectedQuest }: DeleteQuestProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <RxTrash className="text-red-500 text-xl cursor-pointer" />
+        <RxTrash className="text-red-500 text-lg cursor-pointer" />
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>

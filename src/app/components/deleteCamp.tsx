@@ -40,7 +40,7 @@ export default function DeleteCamp({
         {isOwner && (
         <Dialog>
             <DialogTrigger>
-               <span className="text-sm text-red-500">Delete Campaign</span>
+               <span className="text-xs text-red-500">Delete Campaign</span>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>

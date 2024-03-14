@@ -368,7 +368,7 @@ export default function CharList({
                                                 <DialogClose>
                                                     <p className="text-sm">Close</p>
                                                 </DialogClose>
-                                                <Button type='submit' variant='outline'
+                                                <Button type='submit' variant='default'
                                                     onClick={() => {
                                                         removeCharFromCamp({
                                                             id: char._id,
@@ -413,7 +413,7 @@ export default function CharList({
                                 <SheetDescription>
                                     Editing {char.title}&apos;s information.
                                 </SheetDescription>
-                                <div className="text-[#111] dark:text-neutral-100">
+                                <div className="text-[#111] dark:text-neutral-100 mt-4">
                                     <form 
                                         onSubmit={e => {
                                             e.preventDefault();
@@ -906,10 +906,9 @@ export default function CharList({
                                         </div>     
  
                                         <div className="w-full flex justify-end py-4">
-                                            <button type='submit'
-                                                className="border border-neutral-500 rounded-full font-light text-sm py-1.5 px-6">
+                                            <Button type='submit' variant='default'>
                                                 Save
-                                            </button>
+                                            </Button>
                                         </div>
                                     </form>
                                 </div>

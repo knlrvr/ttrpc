@@ -1,9 +1,13 @@
 import { useMutation, useQuery } from 'convex/react';
 
+import { useState } from 'react';
+
 import { api } from "../../../convex/_generated/api";
 import { Id } from "../../../convex/_generated/dataModel"
 
-import { RxCheck } from 'react-icons/rx';
+import { RxCheck, RxTrash } from 'react-icons/rx';
+import { Button } from './ui/button';
+import { DeleteQuest } from './deleteQuest';
 
 
 export default function CompQuestList({
@@ -17,6 +21,8 @@ export default function CompQuestList({
     const quests = useQuery(api.campaigns.getQuests, { id: currentCampaign as Id<"campaigns"> });
     const completeQuest = useMutation(api.campaigns.completeQuest)
 
+    const [selectedQuest, setSelectedQuest] = useState<string | null>(null);
+
     // Check if there are any completed quests
     const completedQuests = quests?.filter(quest => quest.completed);
 
@@ -27,9 +33,12 @@ export default function CompQuestList({
                 {/* Check if there are any completed quests */}
                 {completedQuests && completedQuests.length > 0 ? (
                     completedQuests.map(quest => (
-                        <div key={quest._id} className="flex items-center gap-2">
-                            <RxCheck className="text-green-500" />
-                            <p>{quest.title}</p>
+                        <div key={quest._id} className="flex items-center justify-between gap-2">
+                            <div className="flex items-center">
+                                <RxCheck className="text-green-500 text-lg" />
+                                <p className="text-sm">{quest.title}</p>
+                            </div>
+                            <DeleteQuest questId={quest._id} setSelectedQuest={setSelectedQuest} />
                         </div>
                     ))
                 ) : (

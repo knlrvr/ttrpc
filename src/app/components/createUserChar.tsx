@@ -11,6 +11,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/app/components/ui/accordion"
+import { Button } from "./ui/button";
 
 export default function CreateUserCharacter({}) {
 
@@ -157,7 +158,7 @@ export default function CreateUserCharacter({}) {
                   value={title} 
                   type="text"
                   onChange={e => setTitle(e.target.value)}
-                  className="container bg-transparent rounded-full w-full placeholder:text-neutral-500 px-4 py-2 text-sm"
+                  className="container border border-neutral-300 dark:border-neutral-600 bg-transparent rounded-full w-full placeholder:text-neutral-500 px-4 py-1 text-sm"
                   required
                   placeholder='Character Name'
                 />
@@ -171,7 +172,7 @@ export default function CreateUserCharacter({}) {
                   value={level} 
                   type="number"
                   onChange={e => setLevel(e.target.valueAsNumber)}
-                  className="container bg-transparent rounded-full w-full placeholder:text-neutral-500 px-4 py-2 text-sm"
+                  className="container border border-neutral-300 dark:border-neutral-600 bg-transparent rounded-full w-full placeholder:text-neutral-500 px-4 py-1 text-sm"
                   required
                   placeholder='Character Level'
                 />
@@ -183,7 +184,7 @@ export default function CreateUserCharacter({}) {
                 </label>
                 <select 
                   id="race"
-                  className="rounded-full px-2 py-1 w-full bg-gray-50 dark:bg-[#222] placeholder:text-neutral-500 text-[#222] dark:text-white"
+                  className="rounded-full px-2 py-1 w-full bg-transparent placeholder:text-neutral-500 text-[#222] dark:text-white border border-neutral-300 dark:border-neutral-600"
                   value={race}
                   onChange={(e) => setRace(e.currentTarget.value)}
                 >
@@ -201,7 +202,7 @@ export default function CreateUserCharacter({}) {
                 > class </label>
                 <select
                   id="class"
-                  className="rounded-full px-2 py-1 w-full bg-gray-50 dark:bg-[#222] placeholder:text-neutral-500 text-[#222] dark:text-white"
+                  className="rounded-full px-2 py-1 w-full bg-transparent dark:bg-transparent placeholder:text-neutral-500 text-[#222] dark:text-white border border-neutral-300 dark:border-neutral-600"
                   value={gameClass}
                   onChange={(e) => setGameClass(e.currentTarget.value)}
                 >
@@ -213,11 +214,10 @@ export default function CreateUserCharacter({}) {
                 </select>
               </div>
 
-              <div className="w-full flex justify-end">
-                <button type='submit'
-                  className="border border-neutral-500 rounded-full font-light text-sm py-1.5 px-6">
+              <div className="w-full flex justify-end pt-4 pb-2">
+                <Button type='submit' variant='default'>
                     Save
-                </button>
+                </Button>
               </div>
             </form>
             </AccordionContent>

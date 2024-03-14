@@ -40,6 +40,8 @@ import {
     BsPencilSquare,
     BsTrash
 } from 'react-icons/bs';
+import { Button } from './ui/button';
+import { RxArrowTopRight } from 'react-icons/rx';
 
 const getBorderColorLevel = (level: number): string => {
     if (level >= 1 && level <= 5) {
@@ -324,7 +326,14 @@ export default function UserCharList() {
                                         </div>
                                         <div className="w-1/4 flex flex-col border-l border-neutral-500 px-2"></div>
                                         </div>                                                               
-                                    </div>                                
+                                    </div>        
+
+                                    <Button type='submit' variant='default'
+                                        onClick={() => {
+                                            router.push(`/dashboard/campaigns/${char.campaignId}`)
+                                    }}
+                                    >View In Campaign</Button> 
+
                                 </AccordionContent>
                             </AccordionItem>
                         </Accordion>

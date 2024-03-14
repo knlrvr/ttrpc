@@ -167,12 +167,12 @@ export function CreateQuest({
                         onChange={(e) => setInvReward(e.currentTarget.value)}
                     />
                 </div>
-                <div className="flex justify-end gap-6">
+                <DialogFooter>
                     <DialogTrigger>
-                        <p>Cancel</p>
+                        <p className="text-sm">Cancel</p>
                     </DialogTrigger>
                     <Button type="submit">Save Quest</Button>
-                </div>
+                </DialogFooter>
             </form>
         </DialogContent>
         </Dialog>
