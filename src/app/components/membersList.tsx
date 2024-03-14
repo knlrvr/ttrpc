@@ -1,3 +1,4 @@
+import { useClerk } from "@clerk/clerk-react";
 import { api } from "../../../convex/_generated/api"
 import { Id } from "../../../convex/_generated/dataModel";
 import { useQuery } from "convex/react"
@@ -10,6 +11,8 @@ export default function MembersList({
     params: { url: string }
 }) {
 
+    const { user } = useClerk();
+
     const currentCampaign = params.url
 
     const char = useQuery(api.character.getCampCharacters, { campaignId: currentCampaign as Id<"campaigns"> });
@@ -21,42 +24,28 @@ export default function MembersList({
         (character) => currentCampOwnerImg !== character.playerImg
     );
 
+    const members = camp?.find((c) => c._id === currentCampaign)?.members;
+
     return (
         <>
-            <div className="flex flex-col">
-                {currentCampOwnerImg && (
-                    <div className="flex flex-col">
-                        <span className="ml-1 text-xs text-neutral-500">GM &mdash;</span>
-                        <Image
-                            src={currentCampOwnerImg}
-                            alt="campaign owner image"
-                            width={1000}
-                            height={1000}
-                            className="h-12 w-12 rounded-full border-4 border-neutral-100 dark:border-border"
-                        />
-                    </div>
-                )}
-            
-            {filteredChars !== undefined && filteredChars.length > 0 && (
-            <span className="ml-1 text-xs text-neutral-500 mt-6">Members &mdash;</span>
-            )}
-
             <div className="flex -space-x-4 mt-1">
-                {filteredChars !== undefined && filteredChars.length > 0 && (
-                    filteredChars?.map((char) => (
-                        <div key={char.playerId} className="">
+                {members !== undefined && members.length > 0 ? (
+                    members.map(member => {
+                        return (
                             <Image
-                                src={char.playerImg}
-                                alt="player image"
+                                key={member.playerId}
+                                src={member.playerImg}
+                                alt={`${member.playerName}'s pfp`}
                                 width={1000}
                                 height={1000}
-                                className="h-12 w-12 rounded-full border-4 border-neutral-100 dark:border-border"
+                                className="w-12 h-12 rounded-full border-4 border-neutral-100 dark:border-[#1b1b1b]"
                             />
-                        </div>
-                    ))
+                        )})
+                    
+                ) : (
+                    <p>hey but again</p>
                 )}
             </div>
-        </div>
         </>
     )
 }
