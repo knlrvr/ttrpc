@@ -24,7 +24,9 @@ export default function CampaignsPage() {
       <div className="flex flex-col space-y-2">
         <span className="text-xs text-neutral-500">Campaigns &mdash;</span>
         {camps && camps.length > 0 ? (
-          camps.map(camp => {
+          camps
+          .filter(camp => camp.members.some(member => member.playerId === user?.id))
+          .map(camp => {
             const isMember = camp.members.some(member => member.playerId === user?.id);
             return (
               <Card key={camp._id} className="py-6 px-4">
