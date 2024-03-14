@@ -156,7 +156,7 @@ export const getQuests = query({
     }
 });
 
-export const completeQuest = mutation({
+export const questStatus = mutation({
     args: {
         id: v.id('quests'),
         completed: v.boolean()

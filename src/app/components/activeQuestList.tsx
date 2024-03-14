@@ -16,7 +16,7 @@ export default function ActiveQuestList({
     const currentCampaign = params.url;
 
     const quests = useQuery(api.campaigns.getQuests, { id: currentCampaign as Id<"campaigns"> });
-    const completeQuest = useMutation(api.campaigns.completeQuest)
+    const completeQuest = useMutation(api.campaigns.questStatus)
 
     const [selectedQuest, setSelectedQuest] = useState<string | null>(null);
 
@@ -37,7 +37,13 @@ export default function ActiveQuestList({
                                     <span className="text-neutral-500 text-xs">{quest.type}</span>
                                 </div>
                                 <p className="flex grow mt-4 text-sm">{quest.body}</p>
-                                <div className="flex flex-col text-sm">
+                                <div className="flex flex-col text-sm space-y-2">
+
+                                    <div className="flex justify-between items-center text-xs">
+                                        <p className=" text-neutral-500 w-full">Assigned by</p>
+                                        <span className='w-full text-right'>{quest.assigned}</span>
+                                    </div>
+
                                     {quest.gpReward !== 0 && (
                                         <div className="flex justify-between items-center text-xs">
                                             <p className=" text-neutral-500 w-full">GP Reward</p>

@@ -16,6 +16,7 @@ import {
     DialogTrigger,
 } from '@/app/components/ui/dialog'
 import { BsPlusLg } from 'react-icons/bs';
+import { Button } from './ui/button';
 
 export default function NewCampaign() {
 
@@ -33,9 +34,10 @@ export default function NewCampaign() {
         <div>
             <Dialog>
                 <DialogTrigger>
-                    <div className="flex items-center group space-x-2 px-4 py-1 rounded-full border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-blue-950">
-                        <p className="text-sm font-light">New Campaign</p>
-                        <BsPlusLg />
+                    <div className='bg-neutral-900 text-neutral-50 hover:bg-neutral-900/90 dark:bg-neutral-50 dark:text-neutral-900 dark:hover:bg-neutral-50/90 
+                        px-4 py-2 rounded-md sm:px-3 lg:px-8
+                        '>
+                        New Campaign
                     </div>
                 </DialogTrigger>
                 <DialogContent>
@@ -76,11 +78,9 @@ export default function NewCampaign() {
                                 />
                             </div>
                             <div className="mt-4 ml-1">
-                                <button type='submit'
-                                    className="border border-green-500 text-green-500 py-1 px-6 rounded-full hover:bg-green-500 hover:text-green-950 duration-200"
-                                >
+                                <Button type='submit' variant='neutral'>
                                     Add
-                                </button>
+                                </Button>
                             </div>
                         </form>
                         <form 
@@ -112,11 +112,9 @@ export default function NewCampaign() {
                                 />
                             </div>
                             <div className="mt-4 ml-1">
-                                <button type='submit'
-                                    className="border border-blue-500 text-blue-500 py-1 px-6 rounded-full hover:bg-blue-500 hover:text-blue-950 duration-200"
-                                >
+                                <Button type='submit' variant='successful'>
                                         Join
-                                </button>
+                                </Button>
                             </div>
                         </form>
                     </DialogHeader>

@@ -481,7 +481,7 @@ export default function UserCharList() {
                                         <SheetDescription>
                                             Editing {char.title}&apos;s information.
                                         </SheetDescription>
-                                        <div className="text-[#111] dark:text-neutral-100">
+                                        <div className="text-[#111] dark:text-neutral-100 mt-4">
                                             <form 
                                                 onSubmit={e => {
                                                     e.preventDefault();
@@ -971,11 +971,10 @@ export default function UserCharList() {
                                                     </div>
                                                 </div>     
                 
-                                                <div className="w-full flex justify-end py-4">
-                                                    <button type='submit'
-                                                        className="border border-neutral-500 rounded-full font-light text-sm py-1.5 px-6">
+                                                <div className="w-full flex justify-end pt-8 pb-4">
+                                                    <Button type='submit' variant='successful'>
                                                         Save
-                                                    </button>
+                                                    </Button>
                                                 </div>
                                             </form>
                                             </div>

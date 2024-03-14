@@ -368,7 +368,7 @@ export default function CharList({
                                                 <DialogClose>
                                                     <p className="text-sm">Close</p>
                                                 </DialogClose>
-                                                <Button type='submit' variant='default'
+                                                <Button type='submit' variant='neutral'
                                                     onClick={() => {
                                                         removeCharFromCamp({
                                                             id: char._id,
@@ -905,8 +905,8 @@ export default function CharList({
                                             </div>
                                         </div>     
  
-                                        <div className="w-full flex justify-end py-4">
-                                            <Button type='submit' variant='default'>
+                                        <div className="w-full flex justify-end pt-8 pb-4">
+                                            <Button type='submit' variant='successful'>
                                                 Save
                                             </Button>
                                         </div>
