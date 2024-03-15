@@ -13,3 +13,13 @@
 body {
     background-color: var(--bg-color);
 }
+
+
+/* test bc it only looks funky on macbook? */
+.navbar {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.navbar::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}

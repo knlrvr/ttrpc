@@ -78,7 +78,7 @@ const Header = () => {
                 </button>
 
                 {/* Sidebar content here */}
-                <nav className="flex h-full overflow-scroll flex-col pt-4 p-6 bg-neutral-200 dark:bg-[#111] dark:text-neutral-100 w-full sm:w-64">
+                <nav className="navbar flex h-full flex-col pt-4 p-6 bg-neutral-200 dark:bg-[#111] dark:text-neutral-100 w-full sm:w-64">
                     <h1 className="font-medium tracking-wide text-2xl mb-8 text-center text-transparent bg-clip-text bg-gradient-to-br from-orange-300 to-red-700 dark:from-blue-400 dark:to-red-600">
                         TTRPCompanion
                     </h1>
