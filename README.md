@@ -69,8 +69,8 @@ With the rise of D&D's popularity, tools like D&DBeyond are incredibly reliable 
 
 <a name='testing'></a>
 ## Testing
-If you'd like to take a look around without using your own credentials, use this login;
-email: **dummy@ttrpc.com**
+If you'd like to take a look around without using your own credentials, use this login;       
+email: **dummy@ttrpc.com**       
 password: **password123**
 
 <a name="built-with"></a>
