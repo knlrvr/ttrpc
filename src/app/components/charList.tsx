@@ -409,7 +409,7 @@ export default function CharList({
                                         </DialogContent>
                                     </Dialog>                                 
                                 </div>
-                                <SheetContent>
+                                <SheetContent className='hide-scroll'>
                                 <SheetDescription>
                                     Editing {char.title}&apos;s information.
                                 </SheetDescription>

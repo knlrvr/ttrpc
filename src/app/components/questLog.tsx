@@ -35,7 +35,7 @@ export function QuestLog({
                     <p>Open Quest Log</p>
                 </div>
             </SheetTrigger>
-            <SheetContent>
+            <SheetContent className="hide-scroll">
                 <SheetHeader>
                     <SheetDescription>
                         Completed Quests 
