@@ -82,7 +82,7 @@ v3.0.0 -
 
 <a name="notes"></a>
 ## Notes
-Project is *always* being worked on. If you have any feedback, please feel free to reach out and let me know! Contributions are always welcome, as well. 
+This project is *always* being worked on. If you have any feedback, please feel free to reach out and let me know! I'm always willing to make changes, improvements, or add features! 
 
 <a name="acknowledgements"></a>
 ## Acknowledgements
