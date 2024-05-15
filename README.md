@@ -12,7 +12,6 @@
 - [View](#view)
 - [Testing](#testing)
 - [Built With](#built-with)
-- [Gallery](#gallery)
 - [Notes](#notes)
 - [Acknowledgements](#acknowledgements)
 
@@ -69,18 +68,24 @@ With the rise of D&D's popularity, tools like D&DBeyond are incredibly reliable 
 
 <a name='testing'></a>
 ## Testing
-If you'd like to take a look around without using your own credentials, use this login;       
+If you'd like to take a look around without using your own credentials, use this login -             
 email: **dummy@ttrpc.com**       
 password: **password123**
 
 <a name="built-with"></a>
 ## Built With
+v1.0.0 -          
 [![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://react.dev/) [![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/) [![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/docs/installation) [![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)](https://www.prisma.io/) [![tRPC](https://img.shields.io/badge/trpc-blue.svg?style=for-the-badge&logoColor=white)](https://trpc.io/docs/quickstart) [![NextAuth](https://img.shields.io/badge/NextAuth-black.svg?style=for-the-badge&logoColor=white)](https://next-auth.js.org/) [![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/) [![Playwright](https://img.shields.io/badge/Playwright-45ba4b?style=for-the-badge&logo=Playwright&logoColor=white)](https://playwright.dev/docs/intro)
 
+v2.0.0 -     
+![version](https://img.shields.io/badge/⚠️_|_No_data_available_for_this_version-grey)
 
-<a name="gallery"></a>
-## Gallery
-The gallery features a breakdown of navigation & functionality. You can find the gallery [here](https://github.com/knlrvr/ttrpcompanion-gallery).
+v3.0.0 -         
+[![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://react.dev/) [![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/) [![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/docs/installation) [![Convex](https://img.shields.io/badge/Convex-dc2626?style=for-the-badge&logoColor=white)](https://www.convex.dev/) [![Clerk](https://img.shields.io/badge/Clerk-8A2BE2?style=for-the-badge&logoColor=white)](https://clerk.com/) ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
+
+<a name="notes"></a>
+## Notes
+This project is *always* being worked on. If you have any feedback, please feel free to reach out and let me know! I'm always willing to make changes, improvements, or add features! 
 
 <a name="acknowledgements"></a>
 ## Acknowledgements
