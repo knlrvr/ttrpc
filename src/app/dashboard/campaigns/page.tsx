@@ -4,9 +4,8 @@ import Image from 'next/image';
 
 import React, { useState } from 'react'
 
-import { useMutation, useQuery } from 'convex/react';
+import { useQuery } from 'convex/react';
 import { api } from '../../../../convex/_generated/api';
-import { Id } from '../../../../convex/_generated/dataModel';
 
 import { useClerk } from '@clerk/clerk-react';
 import Link from 'next/link';
@@ -61,4 +60,3 @@ export default function CampaignsPage() {
     </div>
   );
 }
-

@@ -2,8 +2,6 @@
 
 import { useClerk } from "@clerk/clerk-react";
 
-import Image from 'next/image'
-
 import { BsExclamationCircle } from "react-icons/bs";
 
 export default function ProfilePage() {
