@@ -6,15 +6,20 @@ import { useSession } from "@clerk/clerk-react";
 import SignInError from "../components/signInError";
 
 import useStoreUserEffect from "../components/utils/useStoreUser";
+import Nav from "../components/nav";
 
 export default function Layout({
-    children
+    children,
+    params
 }: {
-    children: React.ReactNode
+    children: React.ReactNode,
+    params: { url: string }
 }) {
 
     const {isLoaded, isSignedIn} = useSession();
     const userId = useStoreUserEffect();
+
+    const currentCampaign = params.url;
 
     if (!isLoaded) {
         return null;
@@ -28,11 +33,12 @@ export default function Layout({
     return (
         <>
         {userId && isSignedIn && (
-        <div className="flex min-h-screen relative">
-            <div className="absolute">
+        <div className="flex flex-col min-h-screen relative">
+            <div className="">
+                <Nav />
                 <Header />
             </div>
-            <div className="sm:ml-64 flex-grow bg-neutral-100 bg-opacity-70 dark:bg-[#222] dark:bg-opacity-20 dark:text-neutral-100 w-full my-2 mx-2 sm:mr-2 rounded-xl px-3 py-2 mt-14 sm:mt-2">
+            <div className="mt-2 sm:mt-14 sm:ml-64 flex-grow dark:text-neutral-100 bg-neutral-100 dark:bg-[#111] p-4 sm:p-6">
                 {children}
             </div>
         </div>

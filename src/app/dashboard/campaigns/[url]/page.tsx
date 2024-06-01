@@ -31,11 +31,6 @@ export default function CampaignDetailsPage({
 
     return (
       <div>
-        <Link href='/dashboard/campaigns'
-          className="group text-xs flex items-center space-x-2 text-neutral-500 mb-8 hover:text-blue-500 duration-200">
-            <BsArrowLeft className="text-sm group-hover:-translate-x-1 duration-200" />
-            <p>Back to Campaigns</p>
-        </Link>
 
         <div className="pb-8">
         <MembersList params={{ url: currentCampaign }} />

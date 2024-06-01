@@ -38,7 +38,7 @@ export default function MembersList({
                                 alt={`${member.playerName}'s pfp`}
                                 width={1000}
                                 height={1000}
-                                className="w-12 h-12 rounded-full border-4 border-neutral-100 dark:border-[#1b1b1b]"
+                                className="w-12 h-12 rounded-full border-4 border-neutral-200 dark:border-[#111]"
                             />
                         )})
                     
