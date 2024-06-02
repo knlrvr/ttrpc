@@ -47,7 +47,7 @@ const Header = () => {
 
   return (
     <>
-        <div className="relative">
+        <div className="relative z-[999]">
 
             {/* put in div?? */}
             <button
@@ -55,35 +55,32 @@ const Header = () => {
                 data-drawer-toggle="default-sidebar"
                 aria-controls="default-sidebar"
                 type="button"
-                className="inline-flex items-center p-2 mt-2 text-sm text-[#222] dark:text-white rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                className="fixed my-[1.465rem] ml-4 inline-flex items-center text-sm text-[#222] dark:text-white rounded-lg sm:hidden focus:outline-none z-[999]"
                 onClick={toggleSidebar}
             >
                 <span className="sr-only">Open sidebar</span>
                 <HiOutlineMenuAlt2 
-                    className="text-3xl text-transparent" 
+                    className="text-neutral-200 text-lg" 
                 />
             </button>
             <aside
                 id="default-sidebar"
-                className={`fixed top-0 left-0 z-40 w-full sm:w-64 h-screen transition-transform ${
+                className={`fixed top-0 left-0 w-full sm:w-64 h-screen transition-transform ${
                 isSidebarOpen ? "" : "-translate-x-full sm:translate-x-0"
                 }`}
                 aria-label="Sidebar"
             >
-                <button
+                {/* <button
                     className="sm:hidden absolute top-2 right-2 p-2 text-[#333] dark:text-neutral-200 rounded-lg focus:outline-none focus:ring focus:ring-gray-200"
                     onClick={handleCloseSidebar}
                 >
                     <span className="sr-only">Close sidebar</span>
                     <BsChevronBarLeft 
-                        className="text-3xl" />
-                </button>
+                        className="" />
+                </button> */}
 
                 {/* Sidebar content here */}
-                <nav className="hide-scroll border-r border-neutral-500 flex h-full flex-col pt-4 p-6 bg-neutral-100 dark:bg-[#111] dark:text-neutral-100 w-full sm:w-64">
-                    <h1 className="font-medium tracking-wide text-2xl mb-8 text-center text-transparent bg-clip-text bg-gradient-to-br from-orange-300 to-red-700 dark:from-blue-400 dark:to-red-600">
-                        TTRPCompanion
-                    </h1>
+                <nav className="mt-[4.05rem] hide-scroll sm:border-r border-neutral-500 flex h-full flex-col pt-4 p-4 bg-neutral-100 dark:bg-[#111] dark:text-neutral-100 w-full sm:w-64">
                     <ul className="flex flex-col space-y-4 mb-8">
                         {headerItems.map((item) => (
                             <li key={item.href} className="group">

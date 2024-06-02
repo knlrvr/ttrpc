@@ -17,7 +17,7 @@ export default function PartyTotals({
     return (
         <div className="flex flex-col space-y-2 mb-8">
             <span className="text-xs text-neutral-500">Party Totals &mdash; </span>
-            <div className="grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6 gap-4 ">
+            <div className="grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6 gap-4">
                 <DmgDealtChart params={{ url: currentCampaign }} />
                 <DmgTakenChart params={{ url: currentCampaign }} />
                 <KillsChart params={{ url: currentCampaign }} />
