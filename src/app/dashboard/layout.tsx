@@ -38,7 +38,7 @@ export default function Layout({
                 <Nav />
                 <Header />
             </div>
-            <div className="mt-2 sm:mt-14 sm:ml-64 flex-grow dark:text-neutral-100 bg-neutral-100 dark:bg-[#111] p-4 sm:p-6">
+            <div className="mt-16 sm:mt-14 sm:ml-64 flex-grow dark:text-neutral-100 bg-neutral-100 dark:bg-[#111] p-4 sm:p-6">
                 {children}
             </div>
         </div>

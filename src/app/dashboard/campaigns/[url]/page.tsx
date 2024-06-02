@@ -30,7 +30,7 @@ export default function CampaignDetailsPage({
     const currentCampaign = params.url;
 
     return (
-      <div>
+      <div className="">
 
         <div className="pb-8">
         <MembersList params={{ url: currentCampaign }} />
